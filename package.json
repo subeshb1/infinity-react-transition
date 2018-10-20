@@ -2,12 +2,13 @@
   "name": "infinity-react-transition",
   "version": "0.0.0-development",
   "description": "Simple React Transition Library",
-  "main": "src/index.js",
+  "main": "dist/index.js",
   "scripts": {
     "test": "jest",
     "commit": "npx git-cz",
     "travis-deploy-once": "travis-deploy-once",
-    "semantic-release": "semantic-release"
+    "semantic-release": "semantic-release",
+    "build": "babel --out-dir dist --ignore *.test.js src && cp ./src/transition.css ./dist/transition.css"
   },
   "repository": {
     "type": "git",
@@ -28,12 +29,17 @@
     "react-dom": "^16.5.2"
   },
   "devDependencies": {
+    "@babel/cli": "^7.1.2",
+    "@babel/core": "^7.1.2",
+    "@babel/plugin-proposal-class-properties": "^7.1.0",
+    "@babel/preset-env": "^7.1.0",
+    "@babel/preset-react": "^7.0.0",
     "commitizen": "^3.0.3",
+    "cz-conventional-changelog": "^2.1.0",
     "ghooks": "^2.0.4",
     "jest": "^23.6.0",
     "semantic-release": "^15.10.3",
-    "travis-deploy-once": "^5.0.9",
-    "cz-conventional-changelog": "^2.1.0"
+    "travis-deploy-once": "^5.0.9"
   },
   "jest": {
     "collectCoverage": true,
@@ -46,10 +52,8 @@
     "commitizen": {
       "path": "node_modules/cz-conventional-changelog"
     },
-    "ghooks": {
-    }
+    "ghooks": {}
   },
- 
   "dependencies": {
     "fp-small": "^1.1.1"
   }
