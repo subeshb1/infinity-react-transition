@@ -55,6 +55,6 @@
     "ghooks": {}
   },
   "dependencies": {
-    "fp-small": "^1.1.1"
+    "fp-small": "^1.1.2"
   }
 }
