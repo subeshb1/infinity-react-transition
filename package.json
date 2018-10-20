@@ -1,0 +1,57 @@
+{
+  "name": "infinity-react-transition",
+  "version": "0.0.0-development",
+  "description": "Simple React Transition Library",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "jest",
+    "commit": "npx git-cz",
+    "travis-deploy-once": "travis-deploy-once",
+    "semantic-release": "semantic-release"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/subeshb1/infinity-react-transition.git"
+  },
+  "keywords": [
+    "React",
+    "Transition"
+  ],
+  "author": "'Subesh <'subeshb1@gmail.com'>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/subeshb1/infinity-react-transition/issues"
+  },
+  "homepage": "https://github.com/subeshb1/infinity-react-transition#readme",
+  "peerDependencies": {
+    "react": "^16.5.2",
+    "react-dom": "^16.5.2"
+  },
+  "devDependencies": {
+    "commitizen": "^3.0.3",
+    "ghooks": "^2.0.4",
+    "jest": "^23.6.0",
+    "semantic-release": "^15.10.3",
+    "travis-deploy-once": "^5.0.9",
+    "cz-conventional-changelog": "^2.1.0"
+  },
+  "jest": {
+    "collectCoverage": true,
+    "coverageReporters": [
+      "json",
+      "html"
+    ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-conventional-changelog"
+    },
+    "ghooks": {
+      "pre-commit": "npm run test"
+    }
+  },
+ 
+  "dependencies": {
+    "fp-small": "^1.1.1"
+  }
+}
