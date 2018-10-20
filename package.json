@@ -8,7 +8,8 @@
     "commit": "npx git-cz",
     "travis-deploy-once": "travis-deploy-once",
     "semantic-release": "semantic-release",
-    "build": "babel --out-dir dist --ignore *.test.js src && cp ./src/transition.css ./dist/transition.css"
+    "build": "webpack",
+    "storybook": "start-storybook  -p 6006  -c .storybook"
   },
   "repository": {
     "type": "git",
@@ -26,7 +27,8 @@
   "homepage": "https://github.com/subeshb1/infinity-react-transition#readme",
   "peerDependencies": {
     "react": "^16.5.2",
-    "react-dom": "^16.5.2"
+    "react-dom": "^16.5.2",
+    "prop-types": "15.6.2"
   },
   "devDependencies": {
     "@babel/cli": "^7.1.2",
@@ -34,12 +36,27 @@
     "@babel/plugin-proposal-class-properties": "^7.1.0",
     "@babel/preset-env": "^7.1.0",
     "@babel/preset-react": "^7.0.0",
+    "@storybook/react": "^3.4.11",
+    "babel-loader": "^8.0.4",
     "commitizen": "^3.0.3",
+    "css-loader": "^1.0.0",
     "cz-conventional-changelog": "^2.1.0",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "file-loader": "^2.0.0",
     "ghooks": "^2.0.4",
     "jest": "^23.6.0",
+    "mini-css-extract-plugin": "^0.4.4",
+    "node-sass": "^4.9.4",
+    "prop-types": "15.6.2",
+    "react": "^16.5.2",
+    "react-dom": "^16.5.2",
+    "sass-loader": "^7.1.0",
     "semantic-release": "^15.10.3",
-    "travis-deploy-once": "^5.0.9"
+    "style-loader": "^0.23.1",
+    "travis-deploy-once": "^5.0.9",
+    "url-loader": "^1.1.2",
+    "webpack": "^4.0.0",
+    "webpack-cli": "^3.1.2"
   },
   "jest": {
     "collectCoverage": true,
@@ -55,6 +72,6 @@
     "ghooks": {}
   },
   "dependencies": {
-    "fp-small": "^1.1.2"
+    "fp-small": "^1.1.3"
   }
 }
