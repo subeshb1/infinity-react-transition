@@ -1,4 +1,4 @@
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const pkg = require("./package.json");
 const path = require("path");
 const libraryName = pkg.name;
@@ -13,11 +13,8 @@ module.exports = {
     umdNamedDefine: true
   },
   plugins: [
-    new MiniCssExtractPlugin({
-      // Options similar to the same options in webpackOptions.output
-      // both options are optional
-      filename: "[name].css",
-      chunkFilename: "[id].css"
+    new ExtractTextPlugin({
+      filename: "transition.css"
     })
   ],
   node: {
@@ -42,8 +39,11 @@ module.exports = {
         ]
       },
       {
-        test: /\.css$/,
-        use: [MiniCssExtractPlugin.loader, "css-loader"]
+        test: /\.*css$/,
+        use: ExtractTextPlugin.extract({
+          fallback: "style-loader",
+          use: ["css-loader", "sass-loader"]
+        })
       },
       {
         test: /\.(js|jsx)$/,
@@ -91,8 +91,8 @@ module.exports = {
     "prop-types": {
       commonjs: "prop-types",
       commonjs2: "prop-types",
-      amd: "PropTypes",
-      root: "PropTypes"
+      amd: "prop-types",
+      root: "prop-types"
     }
   }
 };

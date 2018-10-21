@@ -1,4 +1,4 @@
-import React, { PureComponent } from "react";
+import React from "react";
 import "./transition.css";
 import PropTypes from "prop-types";
 import { tryCatch,safeProp} from 'fp-small'
@@ -28,7 +28,7 @@ const getPropFromEvents = (events, event, prop) => {
  * A Component that adds transition to it's Children on Mount and UnMount
  * @class Transition
  */
-export default class Transition extends PureComponent {
+export default class Transition extends React.Component {
   // Mount Flag
   mount = false;
   //   Reference to children
