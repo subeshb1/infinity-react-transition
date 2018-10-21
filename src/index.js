@@ -1,29 +1,8 @@
 import React from "react";
 import "./transition.css";
 import PropTypes from "prop-types";
-import { tryCatch,safeProp} from 'fp-small'
-/**
- * A Helper class to extract single Element
- * @param {PropTypes.element} children
- * @param {object} props
- * @returns {ReactNode}
- */
-const getTransitionElement = (children, props = {}) => {
-  return tryCatch(React.Children.only, children)
-    .map(x => x)
-    .fold(
-      () => ({ valid: false, elem: children }),
-      x => ({ valid: true, elem: x })
-    );
-};
 
-const getPropFromEvents = (events, event, prop) => {
-  return safeProp(event, events)
-    .map(safeProp(prop))
-    .chain(x => x)
-    .fold(() => "", x => x);
-};
-
+import { getPropFromEvents, getTransitionElement } from "./utils";
 /**
  * A Component that adds transition to it's Children on Mount and UnMount
  * @class Transition
@@ -70,15 +49,6 @@ export default class Transition extends React.Component {
       });
     }
   }
-
-  // componentWillUnmount() {
-  //   const node = this.ref.current;
-  //   if (node) {
-  //     node.removeEventListener("animationend", this.transitionEndHandler);
-  //     node.removeEventListener("transitionend", this.transitionEndHandler);
-  //   }
-  // }
-
   /**
    * Adding Transition when Mounted
    * @method onMount
