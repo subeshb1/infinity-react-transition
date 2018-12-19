@@ -28,9 +28,8 @@
   },
   "homepage": "https://github.com/subeshb1/infinity-react-transition#readme",
   "peerDependencies": {
-    "react": "^16.5.2",
-    "react-dom": "^16.5.2",
-    "prop-types": "15.6.2"
+    "react": "16.6.3",
+    "react-dom": "^16.6.3"
   },
   "devDependencies": {
     "@babel/core": "^7.2.2",
@@ -70,9 +69,7 @@
     "ghooks": {}
   },
   "dependencies": {
-    "fp-small": "^1.1.3",
-    "prop-types": "15.6.2",
-    "react": "^16.5.2",
-    "react-dom": "^16.5.2"
+    "react": "16.6.3",
+    "react-dom": "^16.6.3"
   }
 }
